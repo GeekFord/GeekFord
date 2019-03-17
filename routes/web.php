@@ -24,7 +24,15 @@ Route::get('/test', function () {
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/project-test', 'TestController@index');
-
+Route::get('/id{id}', function ($id) {
+    return 'id - ' . $id;
+});
+Route::get('/menu', function () {
+    return 'MENU';
+});
+Route::get('/game', function ($id) {
+    return 'Game here';
+});
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
